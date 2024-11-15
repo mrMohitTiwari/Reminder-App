@@ -10,8 +10,8 @@ function Inputform(props) {
           placeholder="What do You want to do ?"
         />
         <br />
-        <input type="date" id="dueDate" />
-        value={props.userInput.dueDate}
+        <input type="date" id="dueDate" value={props.userInput.dueDate} />
+
         <br />
         <button>Add Item</button>
       </form>
@@ -19,7 +19,6 @@ function Inputform(props) {
   );
 }
 
-export default Inputform;
 // Now validating the data using propType
 Inputform.propTypes = {
   userInput: PropTypes.shape({
@@ -37,3 +36,5 @@ Inputform.defaultProps = {
     dueDate: formattedDate,
   },
 };
+
+export default Inputform;

@@ -1,9 +1,12 @@
+import { setSelectionRange } from "@testing-library/user-event/dist/utils";
+import PropTypes from "prop-types";
+
 function FilterSelect(props) {
   return (
     <>
       <label htmlFor="filterReminders">
         Show Tasks Due:
-        <select id="filterReminders" value={props.selectedfilter}>
+        <select id="filterReminders" value={props.selectedFilter}>
           <option value="2day">within 2 day</option>
           <option value="1week">within 1 week</option>
           <option value="30days">within 30 Days</option>
@@ -13,5 +16,13 @@ function FilterSelect(props) {
     </>
   );
 }
-
+// setting Proptype
+FilterSelect.propTypes = {
+  selectedFilter: PropTypes.string,
+  setSelectedFilter: PropTypes.func,
+};
+// creating default props
+FilterSelect.defaultProps = {
+  selectedFilter: "all",
+};
 export default FilterSelect;
