@@ -1,4 +1,3 @@
-import { isClickableInput } from "@testing-library/user-event/dist/utils";
 import Reminder from "./Reminder";
 import PropTypes from "prop-types";
 

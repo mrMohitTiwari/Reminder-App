@@ -1,4 +1,3 @@
-import { setSelectionRange } from "@testing-library/user-event/dist/utils";
 import PropTypes from "prop-types";
 
 function FilterSelect(props) {
