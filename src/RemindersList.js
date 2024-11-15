@@ -8,6 +8,8 @@ function RemindersList(props) {
         reminderText={reminder.reminderText}
         dueDate={reminder.dueDate}
         isComplete={reminder.isComplete}
+        setIsCompleted={props.setIsCompleted}
+        id={index}
         key={index}
       />
     );

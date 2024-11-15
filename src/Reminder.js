@@ -1,10 +1,25 @@
 import PropTypes from "prop-types";
 
 function Reminder(props) {
+  const handleChange = (e) => {
+    console.log(props.isCompleted);
+
+    props.setIsCompleted(!props.isCompleted, props.id);
+    console.log("after applying the filter");
+    console.log(props.isCompleted);
+  };
   return (
-    <div>
-      item:{props.reminderText} DueDate:{props.dueDate}
-      TargetAchived:{String(props.isCompleted)}
+    <div className="item">
+      item:{props.reminderText}
+      <span>DueDate:{props.dueDate}</span>
+      <span>
+        Completed?:
+        <input
+          type="checkbox"
+          checked={props.isCompleted}
+          onChange={handleChange}
+        />
+      </span>
     </div>
   );
 }

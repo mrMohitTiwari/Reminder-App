@@ -17,8 +17,9 @@ function App() {
   // Since we are using filteration in dispalying the reminderList we should display the filtered content only even if it is set to show all(it is a good practice )
   // then in cahnge of reminders we will paas filteredList
 
-  const filteredList = reminders ? [...reminders] : undefined;
+  // const filteredList = reminders ? [...reminders] : undefined;
   // function which will return the array according the selected filter
+  const filteredList = filterList(reminders, selectedFilter);
   function filterList(reminders, selectedFilter) {
     if (selectedFilter === "all") {
       return reminders;
@@ -47,6 +48,15 @@ function App() {
       return result;
     }
   }
+  // function to topple the isCompleted state
+  function setIsCompleted(isCompleted, index) {
+    const newReminders = [
+      ...reminders.slice(0, index),
+      { ...reminders[index], isCompleted },
+      ...reminders.slice(index + 1),
+    ];
+    setReminders(newReminders);
+  }
   return (
     <div>
       <InputForm
@@ -58,7 +68,7 @@ function App() {
         selectedFilter={selectedFilter}
         setSelectedFilter={setSelectedFilter}
       />
-      <RemindersList reminders={filteredList} />
+      <RemindersList reminders={filteredList} setIsCompleted={setIsCompleted} />
     </div>
   );
 }
