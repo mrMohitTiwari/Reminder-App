@@ -1,5 +1,13 @@
+import Reminder from "./Reminder";
+
 function RemindersList() {
-  return <div>Remainder</div>;
+  return (
+    <>
+      <Reminder />
+      <Reminder />
+      <Reminder />
+    </>
+  );
 }
 
 export default RemindersList;
